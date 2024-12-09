@@ -1,0 +1,230 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: #0d0d2b;
+  color: white;
+  overflow: hidden;
+}
+
+.nav {
+  position: absolute;
+  top: 40px;
+  right: 1200px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  font-weight: bold;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-size: 25px;
+  transition: color 0.3s;
+  cursor: pointer;
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+}
+
+.nav a {
+  color: white;
+  text-decoration: none;
+  margin: 0 15px;
+  font-size: 18px;
+  transition: color 0.3s;
+  cursor: pointer;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  color: #9b00ff;
+  text-shadow: 0 0 10px rgba(155, 0, 255, 0.5);
+  transform: scale(1.1);
+  transition: color 0.3s, text-shadow 0.3s, transform 0.3s;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  height: 100vh;
+  padding-left: 50px;
+  z-index: 1;
+  position: relative;
+}
+
+.content h1 {
+  font-size: 60px;
+  margin: 0;
+  line-height: 1.2;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.planet-icon {
+  color: #9b00ff;
+  animation: rotate 5s linear infinite;
+  margin-right: 10px;
+}
+
+.content p {
+  font-size: 18px;
+  margin: 20px 0;
+  max-width: 400px;
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.buttons {
+  display: flex;
+  gap: 20px;
+}
+
+.buttons a {
+  padding: 15px 30px;
+  border-radius: 30px;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: bold;
+  transition: background 0.3s, box-shadow 0.3s;
+}
+
+.buttons .get-started {
+  background: linear-gradient(90deg, #6e00ff, #9b00ff);
+  color: white;
+  box-shadow: 0 0 20px rgba(110, 0, 255, 0.5);
+}
+
+.buttons .get-started:hover {
+  background: linear-gradient(90deg, #9b00ff, #6e00ff);
+  box-shadow: 0 0 30px rgba(110, 0, 255, 0.7);
+}
+
+.buttons .explore-now {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+}
+
+.buttons .explore-now:hover {
+  background: white;
+  color: #0d0d2b;
+}
+
+.background {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(circle at center, #1a1a40, #0d0d2b);
+  overflow: hidden;
+  z-index: 0;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 1000px;
+  height: 1000px;
+  background: radial-gradient(
+    circle,
+    rgba(0, 0, 0, 0) 20%,
+    rgba(0, 0, 0, 0.5) 100%
+  );
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  animation: pulse 10s infinite ease-in-out;
+}
+
+.background .circle {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.1);
+  animation: float 2.5s infinite ease-in-out;
+}
+
+.background .circle1 {
+  width: 300px;
+  height: 300px;
+  top: 20%;
+  left: 60%;
+  animation-delay: 0s;
+}
+
+.background .circle2 {
+  width: 200px;
+  height: 200px;
+  top: 70%;
+  left: 80%;
+  animation-delay: 2s;
+}
+
+.background .circle3 {
+  width: 150px;
+  height: 150px;
+  top: 80%;
+  left: 20%;
+  animation-delay: 4s;
+}
+
+.background .circle4 {
+  width: 100px;
+  height: 100px;
+  top: 30%;
+  left: 40%;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
+}
+
+@keyframes rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+.earth-image {
+  position: absolute;
+  bottom: -125px;
+  right: -100px;
+  z-index: 99;
+  animation: earth-spin 18s linear infinite;
+}
+
+.earth-image img {
+  width: 750px;
+  transition: transform 0.3s ease-in-out;
+  opacity: 0.8;
+  cursor: pointer;
+  filter: drop-shadow(0 0 10px rgba(0, 0, 0, 0.5));
+}
+
+.earth-image img:hover {
+  transform: scale(1.2); /* Animasi saat hover */
+  opacity: 1;
+}
+
+/* Animasi */
+@keyframes earth-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
